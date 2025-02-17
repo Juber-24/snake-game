@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game</title>
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+    <style>
+        /* Styling for the game container */
+        #game {
+            position: relative;
+            width: 600px;
+            height: 400px;
+            background-color: black;
+            margin: 0 auto;
+        }
+
+        /* Styling for the on-screen buttons */
+        .controls {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: grid;
+            grid-template-areas:
+                ". up ."
+                "left down right";
+            gap: 10px;
+        }
+
+        .controls button {
+            width: 60px;
+            height: 60px;
+            font-size: 24px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .controls button:active {
+            background-color: #45a049;
+        }
+
+        #up {
+            grid-area: up;
+        }
+
+        #left {
+            grid-area: left;
+        }
+
+        #down {
+            grid-area: down;
+        }
+
+        #right {
+            grid-area: right;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Snake Game</h1>
+    <div id="game">
+        <!-- On-screen buttons -->
+        <div class="controls">
+            <button id="up">⬆️</button>
+            <button id="left">⬅️</button>
+            <button id="down">⬇️</button>
+            <button id="right">➡️</button>
+        </div>
+    </div>
+
+    <py-script>
+        # Copy and paste your Python code here
+    </py-script>
+
+    <script>
+        // JavaScript to handle button clicks
+        document.getElementById("up").addEventListener("click", () => {
+            const event = new KeyboardEvent("keydown", { key: "ArrowUp" });
+            window.dispatchEvent(event);
+        });
+
+        document.getElementById("down").addEventListener("click", () => {
+            const event = new KeyboardEvent("keydown", { key: "ArrowDown" });
+            window.dispatchEvent(event);
+        });
+
+        document.getElementById("left").addEventListener("click", () => {
+            const event = new KeyboardEvent("keydown", { key: "ArrowLeft" });
+            window.dispatchEvent(event);
+        });
+
+        document.getElementById("right").addEventListener("click", () => {
+            const event = new KeyboardEvent("keydown", { key: "ArrowRight" });
+            window.dispatchEvent(event);
+        });
+    </script>
+</body>
+</html>
